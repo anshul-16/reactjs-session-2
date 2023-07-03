@@ -1,18 +1,26 @@
-const Counter = () => {
-
-    const [count,setCount] = React.useState(0)
-
-    const handleButtonClick = () => {
-        setCount(count => count+1)
-    }
-
+const ParentComp = () => {
     return(
-        <>
-            <div>Count: {count}</div>
-            <button onClick={handleButtonClick}>Increase by 1</button>
-        </>
+        <div>
+            <div>Parent Component</div>
+            <br />
+            <ChildComponent name='Aman' class='6' />
+            <br />
+            <ChildComponent name='Rahul' class='10'/>
+        </div>
+    )
+}
+
+const ChildComponent = (props) => {
+    
+    console.log(props)
+    return(
+        <div>
+            <div>Child info-</div>
+            <div>Name - {props.name}</div>
+            <div>Class - {props.class}</div>
+        </div>
     )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
-root.render(<Counter />);
+root.render(<ParentComp />);
