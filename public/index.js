@@ -11,36 +11,14 @@ var Counter = function Counter() {
     _React$useState2 = _slicedToArray(_React$useState, 2),
     count = _React$useState2[0],
     setCount = _React$useState2[1];
-  var _React$useState3 = React.useState(["10", "12", "12"]),
-    _React$useState4 = _slicedToArray(_React$useState3, 2),
-    items = _React$useState4[0],
-    setItems = _React$useState4[1];
-  var handleClick = function handleClick(e) {
+  var handleButtonClick = function handleButtonClick() {
     setCount(function (count) {
       return count + 1;
     });
   };
-  var changeItem = function changeItem(e) {
-    var newItems = items.map(function (item) {
-      if (item == "12") {
-        return "13";
-      } else return item;
-    });
-    setItems(newItems);
-  };
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, "Counter : ", count), /*#__PURE__*/React.createElement("button", {
-    onClick: handleClick
-  }, "Increse by 1"), /*#__PURE__*/React.createElement("ol", null, /*#__PURE__*/React.createElement("li", null, "Item one"), /*#__PURE__*/React.createElement("li", null, "Item two")), [/*#__PURE__*/React.createElement("div", {
-    key: "1"
-  }, "item one"), /*#__PURE__*/React.createElement("div", {
-    key: "2"
-  }, "item two")], items.map(function (item) {
-    return /*#__PURE__*/React.createElement("div", {
-      key: "1"
-    }, item);
-  }), /*#__PURE__*/React.createElement("button", {
-    onClick: changeItem
-  }, "Change item"));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", null, "Count: ", count), /*#__PURE__*/React.createElement("button", {
+    onClick: handleButtonClick
+  }, "Increase by 1"));
 };
 var root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( /*#__PURE__*/React.createElement(Counter, null));
