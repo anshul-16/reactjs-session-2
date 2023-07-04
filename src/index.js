@@ -1,18 +1,16 @@
 const App = () => {
-
-    const [value,setValue] = React.useState("")
-    const count = React.useRef(0)
-
-    React.useEffect(() => {
-        count.current = count.current+1   
-    })
-
-    return(
-        <>
-            <input type='text' value={value} onChange={(e) => setValue(e.target.value)} />
-            <div>Render count = {count.current}</div>
-        </>
-    )
+    const inputElement = React.useRef();
+  
+    const focusInput = () => {
+      inputElement.current.focus();
+    };
+  
+    return (
+      <>
+        <input type="text" ref={inputElement} />
+        <button onClick={focusInput}>Focus Input</button>
+      </>
+    );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
