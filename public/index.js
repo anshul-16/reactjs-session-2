@@ -11,12 +11,22 @@ var Counter = function Counter() {
     _React$useState2 = _slicedToArray(_React$useState, 2),
     count = _React$useState2[0],
     setCount = _React$useState2[1];
+  var _React$useState3 = React.useState(true),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    tempState = _React$useState4[0],
+    setTempState = _React$useState4[1];
   React.useEffect(function () {
     setCount(function (count) {
       return count + 1;
     });
-  }, []);
-  return /*#__PURE__*/React.createElement("div", null, "Counter : ", count);
+  }, [tempState]);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", null, "Counter : ", count), /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      return setTempState(function (prev) {
+        return !prev;
+      });
+    }
+  }, "Change Temp State"));
 };
 var root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( /*#__PURE__*/React.createElement(Counter, null));
