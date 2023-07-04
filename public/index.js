@@ -15,7 +15,7 @@ var Counter = function Counter() {
     setCount(function (count) {
       return count + 1;
     });
-  });
+  }, []);
   return /*#__PURE__*/React.createElement("div", null, "Counter : ", count);
 };
 var root = ReactDOM.createRoot(document.getElementById('root'));

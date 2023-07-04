@@ -4,7 +4,7 @@ const Counter = () => {
 
     React.useEffect(() => {
         setCount(count => count+1)
-    })
+    },[])
 
     return(
         <div>Counter : {count}</div>
