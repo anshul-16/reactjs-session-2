@@ -12,7 +12,7 @@ The goal of this session is to dive a little bit in the ReactJs ecosystem.
 
 ### **Prerequisites**
 
-- ReactJs Session : PART-1
+- [ReactJs Session : PART-1](https://github.com/anshul-16/reactjs-session-1)
 
 ### Let’s Dive In
 
