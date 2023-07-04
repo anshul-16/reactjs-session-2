@@ -1,30 +1,15 @@
-const Car = () => {
-  const [car, setCar] = React.useState({
-    brand: "Ford",
-    model: "Mustang",
-    year: "1964",
-    color: "red"
-  });
+const Counter = () => {
 
-  const updateColor = () => {
-    setCar(previousState => {
-      return { ...previousState, color: "blue" }
-    });
-  }
+    const [count,setCount] = React.useState(0)
 
-  return (
-    <>
-      <h1>My {car.brand}</h1>
-      <p>
-        It is a {car.color} {car.model} from {car.year}.
-      </p>
-      <button
-        type="button"
-        onClick={updateColor}
-      >Blue</button>
-    </>
-  )
+    React.useEffect(() => {
+        setCount(count => count+1)
+    })
+
+    return(
+        <div>Counter : {count}</div>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
-root.render(<Car />);
+root.render(<Counter />);
